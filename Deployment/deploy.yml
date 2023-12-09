@@ -1,0 +1,10 @@
+---
+- name: Pull Docker image of Frontend
+  hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Pull image
+      shell: docker pull rahulpuram123/backend:latest
+    - name: Running container
+      shell: docker create -it  --name backend rahulpuram123/backend
